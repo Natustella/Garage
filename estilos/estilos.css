@@ -54,7 +54,6 @@ body {
 
 .search-button,
 .login-button {
-    color: black;
     background-color: transparent;
     border: none;
     font-size: 1em;
@@ -63,10 +62,13 @@ body {
     margin-left: 0.625em;
 }
 
-.fa-user:hover {
-    color: orange;
+.login-button i.fa-user {
+    color: black; 
 }
 
+.login-button:hover i.fa-user {
+    color: orange; 
+}
 .fa-cart-shopping:hover {
     color: orange;
 }
@@ -159,7 +161,7 @@ footer p {
 }
 
 .contactame {
-    background-color:#f8f6f6;
+    background-color: #f8f6f6;
     padding: 2em;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
@@ -196,8 +198,89 @@ footer p {
     background-color: orange;
 }
 
+/*LOGIN*/
+/* Contenedor del formulario de inicio de sesión */
+.login-container {
+    background-color: #ffffff;
+    max-width: 20%;
+    margin: 0 auto;
+    padding: 2% 4%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 10%;
+}
 
-/* para celulares*/
+/* Título del formulario */
+.login-container h2 {
+    font-size: 2vw;
+    color: rgb(133, 31, 133);
+}
+
+/* Grupo de entrada de texto y etiqueta */
+.input-group {
+    margin-bottom: 4%;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 4%;
+    font-weight: bold;
+    color: #333333;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: 90%;
+    padding: 3%;
+    border: 1px solid #cccccc;
+}
+
+/* Estilo cuando el campo de entrada está enfocado */
+.input-group input[type="text"]:focus,
+.input-group input[type="password"]:focus {
+    border: 1px solid orange;
+    outline: none;
+    /* Esto elimina el contorno predeterminado del navegador */
+}
+
+/* Botón de inicio de sesión */
+.login-button {
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    color: #FFA500;
+}
+
+/* Contenedor del botón de cierre */
+.close-button-container {
+    position: relative;
+}
+
+/* Botón de cierre */
+.close-button {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    background-color: transparent;
+    border: none;
+    font-size: 1.6em;
+    cursor: pointer;
+    color: #333333;
+}
+
+.close-button:hover {
+    color: orange;
+    /* Cambia el color al pasar el mouse */
+}
+
+/*PARA CELULARES*/
 @media screen and (max-width: 450px) {
     .navbar {
         display: grid;
@@ -273,10 +356,25 @@ footer p {
         background-color: orange;
         margin-top: 2em;
     }
+
+    /*LOGIN*/
+    .login-container {
+        background-color: #ffffff;
+        max-width: 80%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        text-align: center;
+        margin-top: 30%;
+    }
+
+    .login-container h2 {
+        font-size: 6vw;
+        color: rgb(133, 31, 133);
+    }
 }
 
 
-/* para tablets */
+/*PARA TABLETS*/
 @media screen and (min-width: 451px) and (max-width: 768px) {
     .navbar {
         display: grid;
@@ -342,7 +440,19 @@ footer p {
         background-color: orange;
         margin-top: 2em;
     }
+
+        /*LOGIN*/
+        .login-container {
+            background-color: #ffffff;
+            max-width: 60%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 30%;
+        }
+    
+        .login-container h2 {
+            font-size: 5vw;
+            color: rgb(133, 31, 133);
+        }
 }
-
-
-
