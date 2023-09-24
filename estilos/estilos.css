@@ -132,7 +132,7 @@ body {
 
 .somos {
     text-align: justify;
-    margin: 5em 15em;
+    margin: 5em 10em;
     color: #611061;
 }
 
@@ -177,7 +177,7 @@ footer p {
     padding: 0.5em;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1em;
+
 }
 
 .campo textarea {
@@ -456,3 +456,47 @@ footer p {
             color: rgb(133, 31, 133);
         }
 }
+
+
+
+/* esto es productos*/
+
+/* Estructura de la cuadrícula de productos */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Crea columnas de tamaño mínimo de 200px */
+    gap: 20px; /* Espacio entre los productos */
+  }
+
+.producto {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .product{
+    text-align: center;
+    color: #702f70;
+  }
+  
+/*para la imagen*/
+.producto img {
+    max-width: 100%;
+    height: auto;
+    width: 50%; /* Establece el ancho deseado para todas las imágenes */
+  }
+  
+
+/*para el titulo del producto*/
+.producto h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  /*para el precio del producto*/
+  .producto span {
+    font-weight: bold;
+    color: #e44d26; /* Color de precio similar */
+    font-size: 1rem;
+  }
