@@ -62,7 +62,7 @@ body {
     margin-left: 0.625em;
 }
 
-.login-button i.fa-user {
+.login-button i.fa-user{
     color: black; 
 }
 
@@ -87,22 +87,6 @@ body {
 .cart-icon {
     font-size: 1.4em;
     margin-right: 0.2em;
-}
-
-.cart-count {
-    background-color: #FFA500;
-    color: white;
-    border-radius: 60%;
-    padding: .4em .4em;
-    margin-top: 2%;
-    margin-right: 2.5em;
-    font-size: 75%;
-    /* Posición absoluta para superponer el número */
-    position: absolute;
-    /* Ajusta la posición verticalmente */
-    top: 0.5em;
-    /* Ajusta la posición horizontalmente */
-    right: 0.2em;
 }
 
 .imagen_contenedor {
@@ -171,9 +155,9 @@ footer p {
 }
 
 .campo input[type="email"],
-.campo input[type="tel"],
+.campo input[type="phone"],
 .campo textarea {
-    width: 100%;
+    width: 70%;
     padding: 0.5em;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -332,7 +316,7 @@ footer p {
         height: 20em;
     }
 
-    .texto .navegar {
+    .texto {
         margin-top: 1em;
         margin-left: 15em;
         margin-bottom: 10em;
@@ -500,3 +484,22 @@ footer p {
     color: #e44d26; /* Color de precio similar */
     font-size: 1rem;
   }
+
+
+/* Estilo para el ícono de WhatsApp */
+.producto-icono-whatsapp {
+    bottom: 1em;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 3%;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 90%;
+    margin-top: 5%;
+}
+
+.producto-icono-whatsapp:hover {
+    background-color: #45A049;
+}
+

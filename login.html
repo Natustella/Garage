@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="estilos/estilos.css">
-    <link rel="stylesheet" href="js/app.js">
 </head>
 <body>
     <div class="login-container">
@@ -13,7 +12,7 @@
             <button class="close-button" onclick="goBack()">&times;</button> <!-- Botón de cierre -->
         </div>
         <h2>Iniciar Sesión</h2>
-        <form action="#" method="POST">
+        <form action="#" method="POST" onsubmit="return validateLogin()">
             <div class="input-group">
                 <label for="username">Nombre de Usuario:</label>
                 <input type="text" id="username" name="username" required>
@@ -28,4 +27,5 @@
     <script src="js/app.js"></script>
 </body>
 </html>
+
 
