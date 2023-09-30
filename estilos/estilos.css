@@ -1,13 +1,13 @@
 /* Estilos generales */
-body {
-    margin: 0;
+* {   
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
     padding: 0;
-    font-family: 'Montserrat Alternates', sans-serif;
-}
-
-.logo {
-    margin-left: 1%;
-}
+    margin: 0;
+  }
 
 .container {
     max-width: 1200px;
@@ -16,12 +16,30 @@ body {
 }
 
 /* Estilos de la navegación */
+
+.logo {
+    margin-left: 1%;
+    max-width: 250px;
+}
+
+.top-bar {
+    width: 100%;
+    height: 50px;
+    background-color: #643e91;
+    color: #ffffff;
+    text-align: center;
+    font-size: small;
+    padding: 1% 0;
+    
+
+}
 .navbar {
     background-color: #f8f6f6;
     padding: 1% 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .menu {
@@ -35,10 +53,11 @@ body {
 }
 
 .menu a {
+    font-family: 'Poppins', sans-serif;
     text-decoration: none;
-    font-weight: bold;
     transition: color 0.3s;
-    color: black;
+    color:#464646;
+    font-size: 14px;
 }
 
 .menu a:hover {
@@ -46,6 +65,7 @@ body {
 }
 
 /* Estilos de los iconos de navegación */
+
 .nav-icons {
     display: flex;
     align-items: center;
@@ -108,7 +128,8 @@ body {
 .imagen_contenedor {
     position: relative;
     opacity: 0.8;
-    margin: 0.5%;
+    max-height: 400px;
+    overflow: hidden;
 }
 
 .texto {
@@ -140,19 +161,145 @@ body {
     color: 611061;
 }
 
-.footer {
-    margin: 0.1% 1%;
-    padding: 1%;
-    background-color: #f8f6f6;
-    box-shadow: 2px -2px 5px;
-    position: sticky;
-    bottom: 0;
+/*Aquí debajo va el BLOQUE CATEGORIAS*/
+
+.cards{
+    display: flex;
 }
 
-footer p {
-    text-align: center;
-    font-size: small;
+.card{
+    flex: 50%;
+    margin: 10px;
+    border: 1px solid rgb(226, 226, 226);
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    min-width: 300px;
 }
+
+.card .content{
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+/*.card .footer{
+    background-color: grey;
+    padding: 10px;
+}*/
+
+.container_categorias{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.btn{
+    background: #643e91;
+    padding: 8px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+.box_categorias{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.box_categorias img{
+    width: 33% ;
+}
+
+.productos-home {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); /* Crea columnas de tamaño mínimo de 200px */
+    gap: 20px; /* Espacio entre los productos */
+  }
+
+
+
+
+/*Aquí debajo va el FOOTER*/
+
+footer{
+    width: 100%;
+    background-size: cover;
+    background-color: #e0c8fc;
+    
+}
+
+.container__footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.box__footer{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.box__footer .logo img{
+    width: 180px;
+}
+
+.box__footer .terms{
+    max-width: 350px;
+    margin-top: 20px;
+    color: #7a7a7a;
+    font-size: 15px;
+    line-height: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.box__footer h2{
+    margin-bottom: 30px;
+    color: #643e91;
+    font-weight: 500;
+}
+
+.box__footer a{
+    margin-top: 10px;
+    color: #7a7a7a;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.box__footer a:hover{
+    opacity: 0.8;
+}
+
+.box__footer a .fab{
+    font-size: 20px;
+}
+
+.box__copyright{
+    height: 70px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.box__copyright p{
+    margin-top: 20px;
+    color: #7a7a7a;
+}
+
+.box__copyright hr{
+    border: none;
+    height: 1px;
+    background-color: #c7b1b1;
+}
+
 
 /*formulario de contacto */
 #contacto {
@@ -326,10 +473,6 @@ footer p {
     .cart-icon {
         font-size: 1.5em;
         margin-right: 0.2em;
-    }
-
-    .imagen_contenedor {
-        height: 20em;
     }
 
     .texto .navegar {
