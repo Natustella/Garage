@@ -464,13 +464,6 @@ footer p {
     color: #702f70;
   }
   
-/*para la imagen*/
-.producto img {
-    max-width: 100%;
-    height: auto;
-    width: 50%; /* Establece el ancho deseado para todas las imágenes */
-  }
-  
 
 /*para el titulo del producto*/
 .producto h2 {
@@ -502,4 +495,25 @@ footer p {
 .producto-icono-whatsapp:hover {
     background-color: #45A049;
 }
+
+/* Estilo para las imágenes pequeñas */
+.imagenes-pequenas {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+/*para la imagen*/
+.imagen-principal {
+    max-width: 100%;
+    height: auto;
+    width: 100%; 
+  }
+.imagen-pequena {
+    max-width: 50%;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+
 
