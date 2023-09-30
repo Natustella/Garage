@@ -62,3 +62,6 @@ document.querySelector("form").addEventListener("submit", function (event) {
         event.preventDefault(); // Evita que se envíe el formulario si las validaciones fallan
     }
 });
+
+
+
