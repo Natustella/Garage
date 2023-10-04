@@ -1,12 +1,17 @@
 /* Estilos generales */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: sans-serif;
 }
 
 .logo {
     margin-left: 1%;
+    max-width: 250px;
 }
 
 .container {
@@ -16,6 +21,16 @@ body {
 }
 
 /* Estilos de la navegación */
+.top-bar {
+    width: 100%;
+    height: 50px;
+    background-color: #643e91;
+    color: #ffffff;
+    text-align: center;
+    font-size: small;
+    padding: 1% 0;
+}
+
 .navbar {
     background-color: #f8f6f6;
     padding: 1% 0;
@@ -35,10 +50,12 @@ body {
 }
 
 .menu a {
+    font-family: 'Poppins', sans-serif;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
-    color: black;
+    color: #464646;
+    font-size: 14px;
 }
 
 .menu a:hover {
@@ -62,13 +79,14 @@ body {
     margin-left: 0.625em;
 }
 
-.login-button i.fa-user{
-    color: black; 
+.login-button i.fa-user {
+    color: black;
 }
 
 .login-button:hover i.fa-user {
-    color: orange; 
+    color: orange;
 }
+
 .fa-cart-shopping:hover {
     color: orange;
 }
@@ -92,7 +110,8 @@ body {
 .imagen_contenedor {
     position: relative;
     opacity: 0.8;
-    margin: 0.5%;
+    max-height: 400px;
+    overflow: hidden;
 }
 
 .texto {
@@ -109,11 +128,6 @@ body {
     font-size: 2em;
 }
 
-.texto button {
-    background-color: orange;
-    margin-top: 2em;
-}
-
 .somos {
     text-align: justify;
     margin: 5em 10em;
@@ -124,18 +138,108 @@ body {
     color: 611061;
 }
 
-.footer {
-    margin: 0.1% 1%;
-    padding: 1%;
-    background-color: #f8f6f6;
-    box-shadow: 2px -2px 5px;
-    position: sticky;
-    bottom: 0;
+/*BLOQUE CATEGORIAS*/
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* Crea columnas de tamaño mínimo de 300px */
+    gap: 3%;
 }
 
-footer p {
+.card {
+    flex: 50%;
+    margin: 2%;
+    border: 1px solid rgb(226, 226, 226);
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    min-width: 300px;
+    margin-top: 10%;
+}
+
+.btn {
+    background: #643e91;
+    padding: 1% 5%;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+/*Aquí debajo va el FOOTER*/
+
+footer {
+    width: 100%;
+    background-size: cover;
+    background-color: #e0c8fc;
+
+}
+
+.container__footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.box__footer {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.box__footer .logo img {
+    width: 180px;
+}
+
+.box__footer .terms {
+    max-width: 350px;
+    margin-top: 20px;
+    color: #7a7a7a;
+    font-size: 15px;
+    line-height: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.box__footer h2 {
+    margin-bottom: 30px;
+    color: #643e91;
+    font-weight: 500;
+}
+
+.box__footer a {
+    margin-top: 10px;
+    color: #7a7a7a;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.box__footer a:hover {
+    opacity: 0.8;
+}
+
+.box__footer a .fab {
+    font-size: 20px;
+}
+
+.box__copyright {
+    height: 70px;
+    margin: auto;
     text-align: center;
-    font-size: small;
+    padding: 0px 40px;
+}
+
+.box__copyright p {
+    margin-top: 20px;
+    color: #7a7a7a;
+}
+
+.box__copyright hr {
+    border: none;
+    height: 1px;
+    background-color: #c7b1b1;
 }
 
 /*formulario de contacto */
@@ -328,7 +432,7 @@ footer p {
         position: absolute;
         top: 23%;
         left: -30%;
-        transform: translate(-50%, -50%);
+        transform: translate(-30%, -50%);
     }
 
     .texto h3 {
@@ -336,9 +440,12 @@ footer p {
         font-size: 1em;
     }
 
-    .texto button {
-        background-color: orange;
-        margin-top: 2em;
+    /*BLOQUE CATEGORIAS*/
+    .cards {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    .card {
+        min-width: 100px;
     }
 
     /*LOGIN*/
@@ -425,58 +532,71 @@ footer p {
         margin-top: 2em;
     }
 
-        /*LOGIN*/
-        .login-container {
-            background-color: #ffffff;
-            max-width: 60%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 30%;
-        }
-    
-        .login-container h2 {
-            font-size: 5vw;
-            color: rgb(133, 31, 133);
-        }
+    /*BLOQUE CATEGORIAS*/
+    .cards {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        /* Crea columnas de tamaño mínimo de 300px */
+    }
+
+    .card {
+        min-width: 200px;
+    }
+
+
+    /*LOGIN*/
+    .login-container {
+        background-color: #ffffff;
+        max-width: 60%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        text-align: center;
+        margin-top: 30%;
+    }
+
+    .login-container h2 {
+        font-size: 5vw;
+        color: rgb(133, 31, 133);
+    }
 }
 
 
 
-/* esto es productos*/
-
+/* esto es PRODUCTOS*/
 /* Estructura de la cuadrícula de productos */
 .productos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Crea columnas de tamaño mínimo de 200px */
-    gap: 20px; /* Espacio entre los productos */
-  }
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Crea columnas de tamaño mínimo de 200px */
+    gap: 20px;
+    /* Espacio entre los productos */
+}
 
 .producto {
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-  }
-  
-  .product{
+}
+
+.product {
     text-align: center;
     color: #702f70;
-  }
-  
+}
+
 
 /*para el titulo del producto*/
 .producto h2 {
     font-size: 1.2rem;
     margin-top: 10px;
-  }
+}
 
-  /*para el precio del producto*/
-  .producto span {
+/*para el precio del producto*/
+.producto span {
     font-weight: bold;
-    color: #e44d26; /* Color de precio similar */
+    color: #e44d26;
+    /* Color de precio similar */
     font-size: 1rem;
-  }
+}
 
 
 /* Estilo para el ícono de WhatsApp */
@@ -503,17 +623,16 @@ footer p {
     gap: 10px;
     margin-top: 10px;
 }
+
 /*para la imagen*/
 .imagen-principal {
     max-width: 100%;
     height: auto;
-    width: 100%; 
-  }
+    width: 100%;
+}
+
 .imagen-pequena {
     max-width: 50%;
     cursor: pointer;
     border: 1px solid #ccc;
 }
-
-
-
