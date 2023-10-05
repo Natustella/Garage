@@ -563,8 +563,18 @@ footer {
 
 /* esto es PRODUCTOS*/
 /* Estructura de la cuadrícula de productos */
-.productos {
-    display: grid;
+
+.producto-categorias {
+    width: 18%;
+    display: inline-block;
+    margin-right: 1%;
+}
+.categoria-lista {
+    list-style: none;
+}
+.producto-contenido {
+    width: 80%;
+    display: inline-grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     /* Crea columnas de tamaño mínimo de 200px */
     gap: 20px;
@@ -576,6 +586,8 @@ footer {
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    position: relative;
+    padding-bottom: 100px;
 }
 
 .product {
@@ -596,6 +608,11 @@ footer {
     color: #e44d26;
     /* Color de precio similar */
     font-size: 1rem;
+    position: absolute;
+    bottom: 65px;
+    width: 100%;
+    right: 20px;
+    text-align: right;
 }
 
 
@@ -610,6 +627,11 @@ footer {
     cursor: pointer;
     margin-left: 90%;
     margin-top: 5%;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+
 }
 
 .producto-icono-whatsapp:hover {
