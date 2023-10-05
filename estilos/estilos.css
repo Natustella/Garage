@@ -138,8 +138,14 @@ body {
     color: 611061;
 }
 
-/*BLOQUE CATEGORIAS*/
+/* Animaciones */
+@keyframes in_izq {
+    from {left: -50px; opacity: 0;}
+    to {left: 0px;opacity: 1;}        
+}
 
+/*BLOQUE CATEGORIAS*/
+.container_categorias { padding: 30px;}
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -153,9 +159,13 @@ body {
     border: 1px solid rgb(226, 226, 226);
     display: flex;
     flex-direction: column;
-    padding: 2%;
+    padding: 1% 5% 5% 5%;
     min-width: 300px;
     margin-top: 10%;
+}
+.card img {
+    position: relative;
+    animation:in_izq 1s;
 }
 
 .btn {
@@ -441,9 +451,11 @@ footer {
     }
 
     /*BLOQUE CATEGORIAS*/
+
     .cards {
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     }
+   
     .card {
         min-width: 100px;
     }
@@ -651,10 +663,18 @@ footer {
     max-width: 100%;
     height: auto;
     width: 100%;
-}
+    transition: 0.3s ease;
+    &:hover {   
+        transform: scale(1.15);
+    }
+    }
 
 .imagen-pequena {
     max-width: 50%;
     cursor: pointer;
     border: 1px solid #ccc;
+    transition: 0.2s ease;
+    &:hover {   
+        transform: scale(1.05);
+    }
 }
