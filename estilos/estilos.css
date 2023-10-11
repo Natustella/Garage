@@ -138,8 +138,14 @@ body {
     color: 611061;
 }
 
-/*BLOQUE CATEGORIAS*/
+/* Animaciones */
+@keyframes in_izq {
+    from {left: -50px; opacity: 0;}
+    to {left: 0px;opacity: 1;}        
+}
 
+/*BLOQUE CATEGORIAS*/
+.container_categorias { padding: 30px;}
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -153,9 +159,13 @@ body {
     border: 1px solid rgb(226, 226, 226);
     display: flex;
     flex-direction: column;
-    padding: 2%;
+    padding: 1% 5% 5% 5%;
     min-width: 300px;
     margin-top: 10%;
+}
+.card img {
+    position: relative;
+    animation:in_izq 1s;
 }
 
 .btn {
@@ -290,7 +300,7 @@ footer {
 /* Contenedor del formulario de inicio de sesión */
 .login-container {
     background-color: #ffffff;
-    max-width: 20%;
+    max-width: 40%;
     margin: 0 auto;
     padding: 2% 4%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -441,26 +451,23 @@ footer {
     }
 
     /*BLOQUE CATEGORIAS*/
+
     .cards {
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     }
+   
     .card {
         min-width: 100px;
     }
 
     /*LOGIN*/
     .login-container {
-        background-color: #ffffff;
         max-width: 80%;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 20px;
-        text-align: center;
         margin-top: 30%;
     }
 
     .login-container h2 {
         font-size: 6vw;
-        color: rgb(133, 31, 133);
     }
 }
 
@@ -545,17 +552,12 @@ footer {
 
     /*LOGIN*/
     .login-container {
-        background-color: #ffffff;
         max-width: 60%;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 20px;
-        text-align: center;
         margin-top: 30%;
     }
 
     .login-container h2 {
         font-size: 5vw;
-        color: rgb(133, 31, 133);
     }
 }
 
@@ -563,8 +565,18 @@ footer {
 
 /* esto es PRODUCTOS*/
 /* Estructura de la cuadrícula de productos */
-.productos {
-    display: grid;
+
+.producto-categorias {
+    width: 18%;
+    display: inline-block;
+    margin-right: 1%;
+}
+.categoria-lista {
+    list-style: none;
+}
+.producto-contenido {
+    width: 80%;
+    display: inline-grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     /* Crea columnas de tamaño mínimo de 200px */
     gap: 20px;
@@ -576,6 +588,8 @@ footer {
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    position: relative;
+    padding-bottom: 100px;
 }
 
 .product {
@@ -596,6 +610,11 @@ footer {
     color: #e44d26;
     /* Color de precio similar */
     font-size: 1rem;
+    position: absolute;
+    bottom: 65px;
+    width: 100%;
+    right: 20px;
+    text-align: right;
 }
 
 
@@ -610,6 +629,11 @@ footer {
     cursor: pointer;
     margin-left: 90%;
     margin-top: 5%;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+
 }
 
 .producto-icono-whatsapp:hover {
@@ -629,10 +653,18 @@ footer {
     max-width: 100%;
     height: auto;
     width: 100%;
-}
+    transition: 0.3s ease;
+    &:hover {   
+        transform: scale(1.15);
+    }
+    }
 
 .imagen-pequena {
     max-width: 50%;
     cursor: pointer;
     border: 1px solid #ccc;
+    transition: 0.2s ease;
+    &:hover {   
+        transform: scale(1.05);
+    }
 }
