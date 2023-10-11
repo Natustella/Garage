@@ -300,7 +300,7 @@ footer {
 /* Contenedor del formulario de inicio de sesión */
 .login-container {
     background-color: #ffffff;
-    max-width: 20%;
+    max-width: 40%;
     margin: 0 auto;
     padding: 2% 4%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -462,17 +462,12 @@ footer {
 
     /*LOGIN*/
     .login-container {
-        background-color: #ffffff;
         max-width: 80%;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 20px;
-        text-align: center;
         margin-top: 30%;
     }
 
     .login-container h2 {
         font-size: 6vw;
-        color: rgb(133, 31, 133);
     }
 }
 
@@ -557,17 +552,12 @@ footer {
 
     /*LOGIN*/
     .login-container {
-        background-color: #ffffff;
         max-width: 60%;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 20px;
-        text-align: center;
         margin-top: 30%;
     }
 
     .login-container h2 {
         font-size: 5vw;
-        color: rgb(133, 31, 133);
     }
 }
 
