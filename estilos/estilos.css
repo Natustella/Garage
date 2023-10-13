@@ -523,6 +523,9 @@ footer {
     .login-container h2 {
         font-size: 6vw;
     }
+    .container__footer {
+        margin-top: 21.25em;
+    }
 }
 
 /*PARA TABLETS*/
