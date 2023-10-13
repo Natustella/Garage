@@ -2,6 +2,10 @@ let header = `
 <div class="top-bar"> Con tu primera compra un 10% de descuento</div>
     <nav class="navbar">
         <img src="images/logo.svg" alt="Garage Sale" title="Garage Sale" class="logo">
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        
         <ul class="menu">
             <li><a href="index.html">Inicio</a></li>&nbsp &nbsp
             <li><a href="quienes_somos.html">Quienes Somos</a></li>&nbsp &nbsp
@@ -9,6 +13,8 @@ let header = `
             <li><a href="productos.html">Productos</a></li>&nbsp &nbsp
             <li><a href="contacto.html">Contacto</a></li>&nbsp &nbsp
         </ul>
+
+
         <div class="nav-icons">
             <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
             <button class="login-button">
@@ -24,7 +30,6 @@ let header = `
     </nav>
 `
 document.getElementById("idheader").innerHTML = header
-
 
 let footer = `
 <div class="container__footer">

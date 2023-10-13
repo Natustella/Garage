@@ -11,11 +11,11 @@ body {
 
 .logo {
     margin-left: 1%;
-    max-width: 250px;
+    max-width: 15.625em;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 75em;
     margin: 0 auto;
     padding: 0 2%;
 }
@@ -23,7 +23,7 @@ body {
 /* Estilos de la navegación */
 .top-bar {
     width: 100%;
-    height: 50px;
+    height: 3.125em;
     background-color: #643e91;
     color: #ffffff;
     text-align: center;
@@ -37,13 +37,82 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
+/* Estilos del MENU HAMBURGUESA */
+.menu-toggle {
+    display: none;
+}
+.menu-icon {
+    font-size: 1.875em;
+    cursor: pointer;
+    color:#643e91;
+}
 .menu {
     list-style: none;
     padding: 0;
-    display: flex;
+    margin: 0;
 }
+
+.menu li {
+    display: inline;
+    margin-right: 1.25em;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+}
+/* Menú normal en pantallas más grandes */
+@media screen and (min-width: 970px) {
+    .menu-toggle {
+        display: none;
+    }
+    .menu-icon {
+        display: none;
+    }
+    .menu {
+        display: block;
+    }
+}
+
+/* Menú hamburguesa en pantallas más chicas */
+@media screen and (max-width: 969px) {
+    .menu {
+        display: none;
+    }
+    .menu-toggle:checked + .menu-icon + .menu {
+        display: block;
+        background-color: #e0c8fc;
+        position: absolute;
+        top: 3.75em;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+    }
+    .menu li {
+        display: block;
+        margin-bottom: 0.625em;
+    }
+	    /* Color base de los enlaces en el menú hamburguesa */
+    .menu-toggle:checked + .menu-icon + .menu li a {
+        color: #643e91;
+    }
+    /* Cambia el color cuando el usuario pasa el cursor sobre los enlaces */
+    .menu-toggle:checked + .menu-icon + .menu li a:hover {
+        color: orange;
+    }
+    
+    /* Cambia el color cuando los enlaces están seleccionados (clic en ellos) */
+    .menu-toggle:checked + .menu-icon + .menu li a:active,
+    .menu-toggle:checked + .menu-icon + .menu li a:focus {
+        color: orange;
+    }
+ }
+
+/*hamburguesa hasta aca*/
 
 .menu li:last-child {
     margin-right: 0;
@@ -55,7 +124,7 @@ body {
     font-weight: bold;
     transition: color 0.3s;
     color: #464646;
-    font-size: 14px;
+    font-size: 0.875em;
 }
 
 .menu a:hover {
@@ -110,7 +179,7 @@ body {
 .imagen_contenedor {
     position: relative;
     opacity: 0.8;
-    max-height: 400px;
+    max-height: 25em;
     overflow: hidden;
 }
 
@@ -135,7 +204,7 @@ body {
 }
 
 .somos p b {
-    color: 611061;
+    color: #611061;
 }
 
 /* Animaciones */
@@ -176,7 +245,7 @@ body {
     border-radius: 50px;
 }
 
-/*Aquí debajo va el FOOTER*/
+/*FOOTER*/
 
 footer {
     width: 100%;
@@ -189,38 +258,38 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 75em;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 6.25em;
 }
 
 .box__footer {
     display: flex;
     flex-direction: column;
-    padding: 40px;
+    padding: 2.5em;
 }
 
 .box__footer .logo img {
-    width: 180px;
+    width: 11.25em;
 }
 
 .box__footer .terms {
-    max-width: 350px;
-    margin-top: 20px;
+    max-width: 21.875em;
+    margin-top: 1.25em;
     color: #7a7a7a;
-    font-size: 15px;
-    line-height: 25px;
+    font-size: 0.938em;
+    line-height: 1.563em;
     font-family: 'Poppins', sans-serif;
 }
 
 .box__footer h2 {
-    margin-bottom: 30px;
+    margin-bottom: 1.875em;
     color: #643e91;
     font-weight: 500;
 }
 
 .box__footer a {
-    margin-top: 10px;
+    margin-top: 0.625em;
     color: #7a7a7a;
     font-weight: 400;
     text-decoration: none;
@@ -231,28 +300,28 @@ footer {
 }
 
 .box__footer a .fab {
-    font-size: 20px;
+    font-size: 1.25em;
 }
 
 .box__copyright {
-    height: 70px;
+    height: 4.375em;
     margin: auto;
     text-align: center;
-    padding: 0px 40px;
+    padding: 0em 2.5em;
 }
 
 .box__copyright p {
-    margin-top: 20px;
+    margin-top: 1.25em;
     color: #7a7a7a;
 }
 
 .box__copyright hr {
     border: none;
-    height: 1px;
+    height: 0.063em;
     background-color: #c7b1b1;
 }
 
-/*formulario de contacto */
+/*FORMULARIO DE CONTACTO */
 #contacto {
     text-align: center;
     margin: 3em auto;
@@ -356,7 +425,7 @@ footer {
     color: #FFA500;
 }
 
-/* Contenedor del botón de cierre */
+/*Contenedor del botón de cierre*/
 .close-button-container {
     position: relative;
 }
@@ -380,31 +449,17 @@ footer {
 
 /*PARA CELULARES*/
 @media screen and (max-width: 450px) {
-    .navbar {
-        display: grid;
-        row-gap: 2em;
-        justify-content: space-between;
-    }
-
     .navbar img {
         width: 30%;
     }
 
-    .menu {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-    }
-
     .somos {
-        text-align: justify;
         margin: 2em;
     }
 
     .nav-icons {
-        display: flex;
         align-items: end;
-        padding-right: 2em;
+        font-size: .8em;
     }
 
     .search-button,
@@ -437,7 +492,6 @@ footer {
     }
 
     .texto {
-        color: black;
         padding: 0%;
         position: absolute;
         top: 23%;
@@ -447,17 +501,17 @@ footer {
 
     .texto h3 {
         font-weight: 900;
-        font-size: 1em;
+        font-size: 1.3em;
     }
 
     /*BLOQUE CATEGORIAS*/
-
     .cards {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        /* Crea columnas de tamaño mínimo de 300px */
     }
-   
+
     .card {
-        min-width: 100px;
+        min-width: 200px;
     }
 
     /*LOGIN*/
@@ -471,34 +525,19 @@ footer {
     }
 }
 
-
 /*PARA TABLETS*/
 @media screen and (min-width: 451px) and (max-width: 768px) {
-    .navbar {
-        display: grid;
-        justify-content: space-between;
-    }
-
     .navbar img {
         width: 40%;
     }
-
-    .menu {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        align-content: space-between;
-    }
-
+    
     .somos {
         text-align: justify;
         margin: 2em 3em;
     }
 
     .nav-icons {
-        display: flex;
         align-items: end;
-        padding-right: 2em;
     }
 
     .search-button,
@@ -521,7 +560,6 @@ footer {
     }
 
     .texto {
-        color: black;
         padding: 0%;
         position: absolute;
         top: 39%;
@@ -531,7 +569,7 @@ footer {
 
     .texto h3 {
         font-weight: 900;
-        font-size: 1em;
+        font-size: 1.5em;
     }
 
     .texto button {
@@ -561,11 +599,8 @@ footer {
     }
 }
 
-
-
 /* esto es PRODUCTOS*/
 /* Estructura de la cuadrícula de productos */
-
 .producto-categorias {
     width: 18%;
     display: inline-block;
@@ -585,11 +620,11 @@ footer {
 
 .producto {
     background-color: #fff;
-    padding: 20px;
+    padding: 1.25em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     position: relative;
-    padding-bottom: 100px;
+    padding-bottom: 6.25em;
 }
 
 .product {
@@ -601,7 +636,7 @@ footer {
 /*para el titulo del producto*/
 .producto h2 {
     font-size: 1.2rem;
-    margin-top: 10px;
+    margin-top: 0.625em;
 }
 
 /*para el precio del producto*/
@@ -611,9 +646,9 @@ footer {
     /* Color de precio similar */
     font-size: 1rem;
     position: absolute;
-    bottom: 65px;
+    bottom: 4.063em;
     width: 100%;
-    right: 20px;
+    right: 1.25em;
     text-align: right;
 }
 
@@ -630,8 +665,8 @@ footer {
     margin-left: 90%;
     margin-top: 5%;
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 1.25em;
+    right: 1.25em;
 
 
 }
@@ -644,8 +679,8 @@ footer {
 .imagenes-pequenas {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 0.625em;
+    margin-top: 0.625em;
 }
 
 /*para la imagen*/
