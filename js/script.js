@@ -45,7 +45,7 @@ let footer = `
             <h2>Categorías</h2>
             <a href="deportes.html">Deportes</a>
             <a href="#">Muebles</a>
-            <a href="#">Electrodomésticos</a>
+            <a href="#">Electro</a>
             <a href="#">Jardín</a>
             <a href="#">Antigüedades</a>
         </div>

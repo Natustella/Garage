@@ -6,7 +6,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family:'Poppins', sans-serif;
 }
 
 .logo {
@@ -176,35 +176,74 @@ body {
     margin-right: 0.2em;
 }
 
-.imagen_contenedor {
-    position: relative;
-    opacity: 0.8;
-    max-height: 25em;
-    overflow: hidden;
+/* Estilos para el banner ppal home */
+.banner {
+    background-image: url('../images/living.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 25em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Estilos para el contenedor de 1200 píxeles */
+.container {
+    width: 1200px;
+}
+
+/* Estilos para el texto en color negro */
 .texto {
-    color: #702f70;
-    padding: 0%;
-    position: absolute;
-    top: 15%;
-    left: 25%;
-    transform: translate(-50%, -50%);
+    color: #643e91;    
+    font-size: 1em;
+    line-height: 1em;
 }
 
 .texto h3 {
     font-weight: 900;
-    font-size: 2em;
+    font-size: 3em;
+}
+
+/* Estilos para el banner_promo home */
+
+.banner_promo {
+    background-image: url('../images/img-promo.jpg');
+    background-size:auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #643e91;
+    height: 37.5em;
+    width: 100%;
+    display: flex;
+
+}
+
+.banner_promo h3 {
+    font-weight: 900;
+    font-size: 3em;
+    color: white;
+}
+.banner_promo p{
+        margin-bottom: 3.125em;
+        color: white;
+}
+.btn {
+    background: #f07d00;
+    padding: 1% 5%;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
 }
 
 .somos {
     text-align: justify;
     margin: 5em 10em;
-    color: #611061;
+    color: #643e91;
 }
 
 .somos p b {
-    color: #611061;
+    color: #643e91;
 }
 
 /* Animaciones */
@@ -214,36 +253,34 @@ body {
 }
 
 /*BLOQUE CATEGORIAS*/
-.container_categorias { padding: 30px;}
+
+.container_categorias 
+{ padding: 1.875em;
+    max-width: 1200px;
+    margin: auto;
+}
+
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    /* Crea columnas de tamaño mínimo de 300px */
-    gap: 3%;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1.25em;
 }
 
 .card {
-    flex: 50%;
-    margin: 2%;
-    border: 1px solid rgb(226, 226, 226);
-    display: flex;
-    flex-direction: column;
-    padding: 1% 5% 5% 5%;
-    min-width: 300px;
-    margin-top: 10%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0.625em;
+    padding: 1.25em;
+    text-align: center;
+    max-width: 330px;
 }
 .card img {
-    position: relative;
-    animation:in_izq 1s;
+    max-width: 100%;
 }
 
-.btn {
-    background: #643e91;
-    padding: 1% 5%;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 50px;
-}
 
 /*FOOTER*/
 
@@ -449,6 +486,16 @@ footer {
 
 /*PARA CELULARES*/
 @media screen and (max-width: 450px) {
+    .banner_promo .texto {
+        position:relative;
+        top: 60%;
+    }
+    .banner_promo p {
+        font-size:larger;
+    }
+    .banner_promo .texto h3 {
+        font-size:x-large;
+    }
     .navbar img {
         width: 30%;
     }
@@ -489,9 +536,6 @@ footer {
         margin-top: 1em;
         margin-left: 15em;
         margin-bottom: 10em;
-    }
-
-    .texto {
         padding: 0%;
         position: absolute;
         top: 23%;
@@ -530,10 +574,15 @@ footer {
 
 /*PARA TABLETS*/
 @media screen and (min-width: 451px) and (max-width: 768px) {
+    .banner_promo .texto {
+        position:relative;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
     .navbar img {
         width: 40%;
     }
-    
     .somos {
         text-align: justify;
         margin: 2em 3em;
@@ -573,11 +622,6 @@ footer {
     .texto h3 {
         font-weight: 900;
         font-size: 1.5em;
-    }
-
-    .texto button {
-        background-color: orange;
-        margin-top: 2em;
     }
 
     /*BLOQUE CATEGORIAS*/
