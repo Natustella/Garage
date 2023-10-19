@@ -663,6 +663,7 @@ footer {
     /* Crea columnas de tamaño mínimo de 200px */
     gap: 20px;
     /* Espacio entre los productos */
+    margin-left: 10%;
 }
 
 .producto {
