@@ -14,6 +14,10 @@
         rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+   
 
 </head>
 
@@ -33,7 +37,7 @@
 
 <!-- Sección categorias -->
     <section class="container_categorias">
-        <h1 class="product">Categorías de productos</h1>
+        <h2 class="product">Categorías de productos</h1>
         <div class="cards">
             
             <div class="card">
@@ -69,7 +73,7 @@
     <div class="banner_promo">
         <div class="container">
             <div class="texto">
-                <h3>Promociones</h3>
+                <h2>Promociones</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, sint quae alias nihil, voluptatum labore sit repudiandae totam.</p>
                 <a class="btn" href="#"> Ver Promo </a>
             </div>
@@ -78,7 +82,7 @@
 
      <!-- Sección de Categoria -->
      <section style="max-width: 1200px; margin: auto;">
-        <h1 class="product">Productos Destacados</h1>
+        <h2 class="product">Productos Destacados</h2>
         
         <div class="producto-contenido" >
             <div class="producto">
@@ -106,13 +110,29 @@
         </div>
         
     </section>
-  
-    
 
+    <section id="testimonios">
+        <h2>Testimonios de clientes</h2>
+            <div class="testimonios-container">
+                <input type="radio" name="position" checked/>
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <main id="carousel"></main>
+            </div>
+        </section>
+
+    
+    
+   
+    <!-- llamando al carrousel -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 </body>
 
 <footer id="idfooter"> </footer>
 <script src="js/script.js"></script>
-
 </html>
