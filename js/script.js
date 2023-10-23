@@ -73,3 +73,30 @@ let footer = `
     </div>
 `
 document.getElementById("idfooter").innerHTML = footer;
+
+/* Funcion para llamado de Api con Axios para testimonials */
+
+const getComments = async () => {
+    try {
+        const resPost = await axios(`https://jsonplaceholder.typicode.com/comments?_start=0&_limit=5`)
+        console.log(resPost) //traemos el objeto completo
+        let resHtml=''
+        for (let i = 0; i < resPost.data.length; i++){
+            resHtml+=`   
+            <div class="item">
+                <h2 style="font-family: "Font Awesome 6 Free";><i class="fa-solid fa-quote-right"></i></h2>
+                <h3>${resPost.data[i].name}</h3>
+                <p>${resPost.data[i].body}</p>
+            </div>                  
+            `
+
+        }
+        carousel.innerHTML = resHtml
+        carouselRadios.innerHTML =resRadios
+        } catch (error) {
+        console.log('Ocurrió un error grave', error)
+    }
+    
+}
+
+getComments() // llamada a la función para api testimonials
