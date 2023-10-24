@@ -1,80 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
+    <title>Garage Sale</title>
     <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <script src="https://kit.fontawesome.com/213d716d32.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
+
 <body>
-    <nav class="navbar">
-        <img src="images/logo.svg" alt="Garage Sale" title="Garage Sale" class="logo">
-        <div class="container">           
-            <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>&nbsp &nbsp
-                <li><a href="quienes_somos.html">Quienes Somos</a></li>&nbsp &nbsp
-                <li><a href="como_vender.html">Cómo Vender</a></li>&nbsp &nbsp
-                <li><a href="productos.html">Productos</a></li>&nbsp &nbsp
-                <li><a href="contacto.html">Contacto</a></li>&nbsp &nbsp
-            </ul>
-        </div>
-    </nav>
+    <header id="idheader"></header>
+    <!-- Sección categorias -->
+    <section class="container_categorias">
+        <div class="cards">
 
-    <!-- Cabecera de la sección -->
-    <div class="cabecera-deportes">
-        <h1 class="product">Productos por Categoría</h1>
-    </div>
-     <div class="productos">
-        <aside class="sidebar">
-            <h2>Categorías</h2>
-            <ul class="categoria-lista">
-                <li><a href="deportes.html">Deportes</a></li>
-                <li><a href="#">Hogar</a></li>
-                <li><a href="#">Ropa</a></li>
-                <li><a href="#">Jardín</a></li>
-                <li><a href="#">Decoración</a></li>
-                <li><a href="#">Bebes y Niños</a></li>
-            </ul>
-        </aside>
-        <div class="producto">
-            <img src="#" alt="Producto 1">
-            <h2>Producto1</h2>
-            <p>texto</p>
-            <span>Precio: $</span>
+            <div class="card">
+                <div class="content">
+                    <img src="images/cat-deportes.jpg">
+                    <h1>Deportes</h1>
+                </div>
+                <div class="footer">
+                    <a class="btn" href="deportes.html"> Ver categoría </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <img src="images/cat-muebles.jpg">
+                    <h1>Muebles</h1>
+                </div>
+                <div class="footer">
+                    <a class="btn" href="muebles.html"> Ver categoría </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <img src="images/cat-electro.jpg">
+                    <h1>Electrodomésticos</h1>
+                </div>
+                <div class="footer">
+                    <a class="btn" href="electro.html"> Ver categoría </a>
+                </div>
+            </div>
         </div>
-        <div class="producto">
-            <img src="#" alt="Producto 2">
-            <h2>Producto2</h2>
-            <p>texto</p>
-            <span>Precio: $</span>
-        </div>
-        <div class="producto">
-            <img src="#" alt="Producto 3">
-            <h2>Producto3</h2>
-            <p>texto</p>
-            <span>Precio: $</span>
-        </div>
-        <div class="producto">
-            <img src="#" alt="Producto 4">
-            <h2>Producto4</h2>
-            <p>texto</p>
-            <span>Precio: $/span>
-        </div>
-        <div class="producto">
-            <img src="#" alt="Producto 5">
-            <h2>Producto5r</h2>
-            <p>texto</p>
-            <span>Precio: $</span>
-        </div>
-     </div>
+    </section>
 
-    <footer>
-        <div class="footer">
-            <p> Copyright © 2023 &nbsp;&nbsp;&nbsp;
-                <b>Garage Sale&nbsp;&nbsp;&nbsp;
-                </b> All Rights Reserved.
-            </p>
-        </div>
-    </footer>
+    <section class="video">
+        <h1 style="color: #702f70">¿Cómo vender todo lo que hay en tu casa?</h1>
+        <h2 style="color: #702f70">Te contamos cómo podemos ayudarte sin tener que preocuparte por nada</h2>
+        <iframe class="video" src="https://www.youtube.com/embed/gTOOXb_0JHw"
+            title="Así puedes vender los muebles que no quieres tras mudarte" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </section>
+
+
+
+
 </body>
+
+<footer id="idfooter"> </footer>
+<script src="js/script.js"></script>
+
 </html>

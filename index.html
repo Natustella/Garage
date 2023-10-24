@@ -6,201 +6,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garage Sale</title>
     <link rel="stylesheet" href="estilos/estilos.css">
-    <link rel="icon" type="image/ico" href="images/favicon.ico">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <script src="js/app.js"></script>
     <script src="https://kit.fontawesome.com/213d716d32.js" crossorigin="anonymous"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+   
+
 </head>
-<!-- Contenido de la página -->
+
 <body>
-    <header class="header">
-    <div class="top-bar"> Con tu primera compra un 10% de descuento</div>
-    <nav class="navbar">
-        <img src="images/logo.svg" alt="Garage Sale" title="Garage Sale" class="logo">
-        <ul class="menu">
-            <li><a href="index.html">Inicio</a></li>&nbsp &nbsp
-            <li><a href="quienes_somos.html">Quienes Somos</a></li>&nbsp &nbsp
-            <li><a href="como_vender.html">Cómo Vender</a></li>&nbsp &nbsp
-            <li><a href="productos.html">Productos</a></li>&nbsp &nbsp
-            <li><a href="contacto.html">Contacto</a></li>&nbsp &nbsp
-        </ul>
-        <div class="nav-icons">
-            <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <button class="login-button">
-                <a href="login.html">
-                    <i class="fa-solid fa-user fa-xl" type="button"></i>
-                </a>
-            </button>
-            <div class="cart">
-                <span class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></span>
-                <span class="cart-count">0</span>
-            </div>
-        </div>
-    </nav>
-    <!-- Slider -->
-        <div class="imagen_contenedor">
-            <img src="images/living.jpg" alt="foto" width="100%" alt="foto">
+    <header id="idheader"></header>
+    <div class="banner">
+        <div class="container">
             <div class="texto">
-                <h1 class="h1_slider">Ventas por Mudanzas</h1>
-                <p class="p_slider">Te invitamos a formar parte de nuestra historia. Te ofrecemos un servicio de calidad y confianza</p>
-                
+                <h3>Ventas por Mudanzas</h3>
+                <p>Te invitamos a formar parte de nuestra historia.</p>
+                <p>Te ofrecemos un servicio de calidad y confianza.</p>
+            </div>
+        </div>
+    </div>
+  
+
+
+<!-- Sección categorias -->
+    <section class="container_categorias">
+        <h2 class="product">Categorías de productos</h1>
+        <div class="cards">
+            
+            <div class="card">
+                <div class="content">
+                    <img src="images/cat-deportes.jpg" >
+                    <h1>Deportes</h1>
+                </div>
                 <div class="footer">
-                    <a class="btn" href="#"> Ofertas </a>
-               </div>
+                    <a class="btn" href="deportes.html"> Ver categoría </a>
+                </div>
             </div>
-           
+            <div class="card">
+                <div class="content">
+                    <img src="images/cat-muebles.jpg" >
+                    <h1>Muebles</h1>
+                </div>
+                <div class="footer">
+                    <a class="btn" href="muebles.html"> Ver categoría </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <img src="images/cat-electro.jpg" >
+                    <h1>Electrodomésticos</h1>
+                </div>
+                <div class="footer">
+                    <a class="btn" href="electro.html"> Ver categoría </a>
+                </div>
+            </div> 
         </div>
-    </header>
-    <!-- Sección categorias -->
-    <section class="container_categorias">
-    <div class="cards">
-        <div class="card">
-            <div class="content">
-                <h1>Categoria 1</h1>
-                <img src="images/cat-muebles.png" height="100px" >
-                <p>Ut nostrum voluptatibus dignissimos est veniam possimus, aperiam magnam earum modi officiis quae ipsa esse saepe neque voluptatum architecto? Ipsum, temporibus officiis.</p>
-            </div>
-            <div class="footer">
-                 <a class="btn" href="#"> Ver categoria </a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <h1>Categoria 2</h1>
-                <img src="images/cat-electro.png" height="100px" >
-                <p>Ut nostrum voluptatibus dignissimos est veniam possimus, aperiam magnam earum modi officiis quae ipsa esse saepe neque voluptatum architecto? Ipsum, temporibus officiis.</p>
-            </div>
-            <div class="footer">
-                <a class="btn" href="#"> Ver categoria </a>
-           </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <h1>Categoria 3</h1>
-                <img src="images/cat-electro.png" height="100px" >
-                <p>Ut nostrum voluptatibus dignissimos est veniam possimus, aperiam magnam earum modi officiis quae ipsa esse saepe neque voluptatum architecto? Ipsum, temporibus officiis.</p>
-            </div>
-            <div class="footer">
-                <a class="btn" href="#"> Ver categoria </a>
-           </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <h1>Categoria 4</h1>
-                <img src="images/cat-electro.png" height="100px" >
-                <p>Ut nostrum voluptatibus dignissimos est veniam possimus, aperiam magnam earum modi officiis quae ipsa esse saepe neque voluptatum architecto? Ipsum, temporibus officiis.</p>
-            </div>
-            <div class="footer">
-                <a class="btn" href="#"> Ver categoria </a>
-           </div>
-        </div>
-    </div>
     </section>
-<!-- 
-    <section class="container_categorias">
-    <div class="box_categorias">
-        <img src="images/bici1.jpg" >
+
+    <div class="banner_promo">
         <div class="container">
-          <h4><b>Muebles</b></h4> 
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deleniti eligendi vitae sapiente porro quod maiores.</p> 
+            <div class="texto">
+                <h2>Promociones</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, sint quae alias nihil, voluptatum labore sit repudiandae totam.</p>
+                <a class="btn" href="#"> Ver Promo </a>
+            </div>
         </div>
     </div>
 
-    <div class="box_categorias">
-        <img src="images/bici1.jpg">
-        <div class="container">
-          <h4><b>Electrodomésticos</b></h4> 
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deleniti eligendi vitae sapiente porro quod maiores.</p> 
+     <!-- Sección de Categoria -->
+     <section style="max-width: 1200px; margin: auto;">
+        <h2 class="product">Productos Destacados</h2>
+        
+        <div class="producto-contenido" >
+            <div class="producto">
+                <img src="images/bici1.jpg" alt="Bici" class="imagen-principal producto-1" id="1">
+                
+                <h2>Bici Merida</h2>
+                
+            </div>        
+            <div class="producto">
+                <img src="images/casco1.jpg" alt="Casco" class="imagen-principal producto-2" id="2">
+                
+                <h2>Casco para Motos</h2>
+                
+            </div>
+            <div class="producto">
+                <img src="images/scooter2.jpg" alt="Scooter" class="imagen-principal producto-3" id="3">
+               
+                <h2>Scooter Eléctrico</h2>
+               
+            </div>
+            <div class="producto">
+                <img src="images/snowboard1.jpg" alt="Snowboard" class="imagen-principal producto-4" id="4">
+                <h2>Tabla Snowboard</h2>                
+            </div>        
         </div>
-    </div>
-
-    <div class="box_categorias">
-        <img src="images/bici1.jpg">
-        <div class="container">
-          <h4><b>Otros</b></h4> 
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deleniti eligendi vitae sapiente porro quod maiores.</p> 
-        </div>
-    </div>
-</section>
- -->
- <!-- Sección productos -->
-<section class="productos-home">
-    <div class="producto">
-        <img src="images/bici1.jpg" alt="Producto 1">
-        <h2>Producto1</h2>
-        <p>texto</p>
-        <span>Precio: $</span>
-    </div>
-
-    <div class="producto">
-        <img src="images/bici1.jpg" alt="Producto 1">
-        <h2>Producto1</h2>
-        <p>texto</p>
-        <span>Precio: $</span>
-    </div>
-
-    <div class="producto">
-        <img src="images/bici1.jpg" alt="Producto 1">
-        <h2>Producto1</h2>
-        <p>texto</p>
-        <span>Precio: $</span>
-    </div>
-
-    <div class="producto">
-        <img src="images/bici1.jpg" alt="Producto 1">
-        <h2>Producto1</h2>
-        <p>texto</p>
-        <span>Precio: $</span>
-    </div>
+        
     </section>
+
+    <section id="testimonios">
+        <h2>Testimonios de clientes</h2>
+            <div class="testimonios-container">
+                <input type="radio" name="position" checked/>
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <main id="carousel"></main>
+            </div>
+        </section> 
+    <!-- llamando al carrousel -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 </body>
 
-
-<!-- Pie -->
-<footer class="pie-pagina">
-
-    <div class="container__footer">
-        <div class="box__footer">
-            <div class="logo">
-                <img src="images/logo.svg" alt="">
-            </div>
-            <div class="terms">
-                <p>Tienda de venta de artículos usados creada por cuatro amigos que comparten una misma visión: darle una segunda oportunidad a lo que otros descartan.</p>
-            </div>
-        </div>
-        <div class="box__footer">
-            <h2>Categorías</h2>
-            <a href="#">Muebles</a>
-            <a href="#">Electrodomésticos</a>
-            <a href="#">Jardín</a>
-            <a href="#">Antigüedades</a>
-        </div>
-
-        <div class="box__footer">
-            <h2>Secciones</h2>
-            <a href="#">Nosotros</a>
-            <a href="#">Compras</a>
-            <a href="#">Ventas</a>
-            <a href="#">Contacto</a>              
-        </div>
-
-        <div class="box__footer">
-            <h2>Redes Sociales</h2>
-            <a href="#"> <i class="fab fa-facebook-square"></i> Facebook</a>
-            <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
-            <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
-        </div>
-
-    </div>
-
-    <div class="box__copyright">
-        <hr>
-        <p>Todos los derechos reservados © 2023 <b>Garage Sale</b></p>
-    </div>
-</footer>
-
+<footer id="idfooter"> </footer>
+<script src="js/script.js"></script>
 </html>
