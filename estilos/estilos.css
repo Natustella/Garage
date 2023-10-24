@@ -570,6 +570,14 @@ footer {
     .container__footer {
         margin-top: 21.25em;
     }
+    /*Carrousel*/
+    main#carousel {
+        width: 85vw;
+    }
+    .testimonios-container {
+        margin: -2.313em;
+        grid-template-columns: 1fr 1.25em 1.25em 1.25em 1.25em 1.25em 1fr;
+    }
 }
 
 /*PARA TABLETS*/
@@ -680,6 +688,10 @@ footer {
     color: #702f70;
 
 }
+
+/* BLOQUE VIDEO */
+
+.video {text-align: center; width: 1200px; height:780px; margin: auto; padding-bottom: 100px;}
 
 
 /*para el titulo del producto*/
