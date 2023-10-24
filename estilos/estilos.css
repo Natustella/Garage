@@ -20,8 +20,6 @@ body {
     padding: 0 2%;
 }
 
-
-
 /* Estilos de la navegación */
 .top-bar {
     width: 100%;
@@ -283,10 +281,6 @@ body {
     max-width: 100%;
 }
 
-
-/* BLOQUE VIDEO */
-
-.video {text-align: center; width: 1200px; height:780px; margin: auto; padding-bottom: 100px;}
 
 /*FOOTER*/
 
@@ -576,8 +570,14 @@ footer {
     .container__footer {
         margin-top: 21.25em;
     }
-    /* seccion video */
-    .video {text-align: center; width:100%; height:200px; }
+    /*Carrousel*/
+    main#carousel {
+        width: 85vw;
+    }
+    .testimonios-container {
+        margin: -2.313em;
+        grid-template-columns: 1fr 1.25em 1.25em 1.25em 1.25em 1.25em 1fr;
+    }
 }
 
 /*PARA TABLETS*/
@@ -683,11 +683,15 @@ footer {
     padding-bottom: 6.25em;
 }
 
-.product, #testimonios h2, .video {
+.product, #testimonios h2 {
     text-align: center;
     color: #702f70;
 
 }
+
+/* BLOQUE VIDEO */
+
+.video {text-align: center; width: 1200px; height:780px; margin: auto; padding-bottom: 100px;}
 
 
 /*para el titulo del producto*/
