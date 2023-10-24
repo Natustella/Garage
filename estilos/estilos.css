@@ -691,7 +691,7 @@ footer {
 
 /* BLOQUE VIDEO */
 
-.video {text-align: center; width: 1200px; height:780px; margin: auto; padding-bottom: 100px;}
+.video {text-align: center; width: 100%; height:780px; margin: auto; padding-bottom: 100px;}
 
 
 /*para el titulo del producto*/
