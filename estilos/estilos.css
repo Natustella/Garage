@@ -278,11 +278,10 @@ body {
 }
 
 .cards {
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 1.25em;
+    margin: 0.25em;
 }
 
 .card {
