@@ -22,7 +22,7 @@ body {
 /* Estilos de la navegación */
 .top-bar {
     width: 100%;
-    height: 3.125em;
+    /*height: 3.125em;*/
     background-color: #643e91;
     color: #ffffff;
     text-align: center;
