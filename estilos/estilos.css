@@ -538,7 +538,7 @@ footer {
         margin-bottom: 10em;
         padding: 0%;
         position: absolute;
-        top: 23%;
+        top: 43%;
         left: -30%;
         transform: translate(-30%, -50%);
     }
@@ -694,7 +694,7 @@ footer {
 .video {
     text-align: center;
     width: 100%; /* Establece el ancho al 100% para que ocupe todo el ancho disponible */
-    max-width: 80%; /* Establece un ancho máximo de 1200px */
+    max-width: 80%; 
     height: auto;
     margin: auto;
     padding-bottom: 0;
