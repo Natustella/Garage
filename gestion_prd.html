@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <!-- Incluye el CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/213d716d32.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+
+</head>
+<body>
+    <header id="idheader"></header>
+  
+<div class="container mt-5">
+    <h1 class="mb-4">Gestión de Productos</h1>
+
+    <!-- Botones para mostrar los formularios -->
+    <button type="button" style= "color:black; background: #ccb3eb; border:none" id="mostrarAgregarFormBtn">Agregar Producto</button>
+    <button type="button" style= "color:black; background: #ccb3eb; border:none"  id="mostrarConsultarFormBtn">Consultar Producto</button>
+    <button type="button" style= "color:black; background: #ccb3eb; border:none"  id="mostrarModificarFormBtn">Modificar Producto</button>
+    <button type="button" style= "color:black; background: #ccb3eb; border:none"  id="mostrarEliminarFormBtn">Eliminar Producto</button>
+    <button type="button" style= "color:black; background: #ccb3eb; border:none"  id="mostrarListadoFormBtn">Listado de Productos</button>
+
+    <!-- Formulario para agregar/modificar producto -->
+    <div class="card mb-4" id="agregarModificarFormContainer" style="display: none;">
+        <div class="card-header">
+            <span id="operacionTitulo">Agregar/Modificar Producto</span>
+        </div>
+        <div class="card-body">
+            <form id="agregarModificarForm">
+                <div class="card-body">
+                        <div class="form-group">
+                            <label for="codigoModificar">Código:</label>
+                            <input type="text" class="form-control" id="codigoModificar" placeholder="Código del producto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nuevoNombre">Nuevo Nombre:</label>
+                            <input type="text" class="form-control" id="nuevoNombre" placeholder="Nombre del producto">
+                        </div>
+                        <div class="form-group">
+                            <label for="nuevaDescripcion">Nueva Descripción:</label>
+                            <textarea class="form-control" id="nuevaDescripcion" rows="3" placeholder="Descripción del producto"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="nuevoPrecio">Nuevo Precio:</label>
+                            <input type="text" class="form-control" id="nuevoPrecio" placeholder="Precio del producto">
+                        </div>
+                        <div class="form-group">
+                            <label for="nuevaImagen">Nueva Imagen:</label>
+                            <input type="text" class="form-control" id="nuevaImagen" placeholder="URL de la imagen">
+                        </div>
+                </div>
+                <button type="submit" style= "color:black; background: #ccb3eb; border:none">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Formulario para consultar producto -->
+    <div class="card mb-4" id="consultarFormContainer" style="display: none;">
+        <div class="card-header">
+            Consultar Producto
+        </div>
+        <div class="card-body">
+            <form id="consultarForm">
+                <div class="form-group">
+                    <label for="codigoConsultar">Código:</label>
+                    <input type="text" class="form-control" id="codigoConsultar" placeholder="Código del producto a consultar" required>
+                </div>
+                <button type="submit" style= "color:black; background: #ccb3eb; border:none">Consultar</button>
+        </form>
+        </div>
+    </div>
+
+    <!-- Formulario para eliminar producto -->
+    <div class="card mb-4" id="eliminarFormContainer" style="display: none;">
+        <div class="card-header">
+            <span id="operacionTituloEliminar">Eliminar Producto</span>
+        </div>
+        <div class="card-body">
+            <form id="eliminarForm">
+                    <div class="form-group">
+                        <label for="codigoEliminar">Código:</label>
+                        <input type="text" class="form-control" id="codigoEliminar" placeholder="Código del producto" required>
+                    </div>
+                    <button type="submit" style= "color:black; background: #ccb3eb; border:none">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- Incluye el JavaScript de Bootstrap y Popper.js (necesario para ciertos componentes de Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    document.getElementById('mostrarAgregarFormBtn').addEventListener('click', function () {
+        mostrarFormulario('agregarModificarFormContainer', 'Agregar Producto');
+    });
+
+    document.getElementById('mostrarConsultarFormBtn').addEventListener('click', function () {
+        mostrarFormulario('consultarFormContainer', 'Consultar Producto');
+    });
+
+    document.getElementById('mostrarModificarFormBtn').addEventListener('click', function () {
+        mostrarFormulario('agregarModificarFormContainer', 'Modificar Producto');
+    });
+
+    document.getElementById('mostrarEliminarFormBtn').addEventListener('click', function () {
+        mostrarFormulario('eliminarFormContainer', 'Eliminar Producto');
+    });
+
+    function mostrarFormulario(formId, titulo) {
+        // Oculta todos los formularios
+        ocultarFormularios();
+        // Muestra el formulario seleccionado
+        document.getElementById(formId).style.display = 'block';
+        // Modifica el título del formulario
+        document.getElementById('operacionTitulo').innerText = titulo;
+        document.getElementById('operacionTituloEliminar').innerText = titulo;
+    }
+
+    function ocultarFormularios() {
+        document.getElementById('agregarModificarFormContainer').style.display = 'none';
+        document.getElementById('consultarFormContainer').style.display = 'none';
+        document.getElementById('eliminarFormContainer').style.display = 'none';
+    }
+</script>
+
+</body>
+<footer id="idfooter"> </footer>
+<script src="js/script.js"></script>
+</html>
