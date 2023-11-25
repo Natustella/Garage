@@ -12,6 +12,7 @@ let header = `
             <li><a href="como_vender.html">Cómo Vender</a></li>&nbsp &nbsp
             <li><a href="productos.html">Productos</a></li>&nbsp &nbsp
             <li><a href="contacto.html">Contacto</a></li>&nbsp &nbsp
+            <li><a href="template/gestion_prd.html">Gestión de Productos</a></li>&nbsp &nbsp
         </ul>
 
 
