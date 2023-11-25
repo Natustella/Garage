@@ -12,12 +12,31 @@ function validateLogin() {
     // Validación user y pass
     if (username === 'admin' && password === '1234') {
         alert('Inicio de sesión exitoso');
-        return true;
+
+        // Realiza una solicitud GET para redirigir al usuario
+        fetch('../template/gestion_prd.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al cargar la página');
+                }
+                return response.text();
+            })
+            .then(html => {
+                document.body.innerHTML = html;
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+        return false; // Evita que se envíe el formulario de manera tradicional
     } else {
         alert('Nombre de usuario o contraseña incorrectos');
         return false;
     }
 }
+
+
+
 //Funcion para validación de campos en FORMULARIO DE CONTACTO
 function isValidEmail(email) {
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
