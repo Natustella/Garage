@@ -8,9 +8,9 @@ let header = `
         
         <ul class="menu">
             <li><a href="index.html">Inicio</a></li>&nbsp &nbsp
+            <li><a href="productos.html">Productos</a></li>&nbsp &nbsp
             <li><a href="quienes_somos.html">Quienes Somos</a></li>&nbsp &nbsp
             <li><a href="como_vender.html">Cómo Vender</a></li>&nbsp &nbsp
-            <li><a href="productos.html">Productos</a></li>&nbsp &nbsp
             <li><a href="contacto.html">Contacto</a></li>&nbsp &nbsp
             <li><a href="template/gestion_prd.html">Gestión de Productos</a></li>&nbsp &nbsp
         </ul>
@@ -53,9 +53,9 @@ let footer = `
 
         <div class="box__footer">
             <h2>Secciones</h2>
+            <a href="productos.html">Productos</a>
             <a href="quienes_somos.html">Quienes Somos</a>
             <a href="como_vender.html">Como Vender</a>
-            <a href="productos.html">Productos</a>
             <a href="contacto.html">Contacto</a>              
         </div>
 

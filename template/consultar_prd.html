@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Producto</title>
+    <!-- Incluye el CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../estilos/estilos_crud.css">
+
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/213d716d32.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+</head>
+
+<body>
+    <h1>Consultar Producto del Inventario</h1>
+    <div id="app">
+        <form @submit.prevent="consultarProducto"> 
+            <label for="codigo">Código:</label> 
+            <input type="text" v-model="codigo" required><br> 
+            
+            <button type="submit">Consultar Producto</button> <a href="gestion_prd.html">Menu principal</a>
+        </form>
+        <div v-if="mostrarDatosProducto">
+            <h2>Datos del Producto</h2>
+            <ul>
+                <li><strong>Código:</strong> {{ codigo }}</li>
+                <li><strong>Nombre:</strong> {{ nombre }}</li>
+                <li><strong>Descripción:</strong> {{ descripcion }}</li>
+                <li><strong>Precio:</strong> {{ precio }}</li>
+                <li v-if="imagen"><strong>Imagen:</strong> <img :src="'./static/imagenes/' + imagen" alt="Imagen del producto" style="max-width: 200px;"></li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="../js/consultas.js"></script>
+
+</body>
+</html>
