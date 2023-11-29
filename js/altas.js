@@ -2,7 +2,8 @@ const URL = "http://127.0.0.1:5000/"
 // Capturamos el evento de envío del formulario 
 document.getElementById('formulario').addEventListener('submit', function (event) {
     event.preventDefault(); // Evitamos que se envie el form 
-    var formData = new FormData(); 
+    
+	var formData = new FormData(); 
     formData.append('codigo', document.getElementById('codigo').value);
 	formData.append('nombre', document.getElementById('nombre').value); 
     formData.append('descripcion', document.getElementById('descripcion').value); 

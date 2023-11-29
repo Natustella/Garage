@@ -4,7 +4,11 @@ fetch(URL + 'productos')
     .then(function (response) { 
 	    if (response.ok) { 
 		    return response.json();
-		} 
+		}
+		else { // Si hubo un error, lanzar explícitamente una excepción 
+			   // para ser "catcheada" más adelante 
+			   throw new Error('Error al obtener los productos.'); 
+			}
 	})
 	.then(function (data) { 
 	    let tablaProductos = document.getElementById('tablaProductos'); 
@@ -16,12 +20,13 @@ fetch(URL + 'productos')
 			    '<td>' + producto.descripcion + '</td>' + 
 				'<td align="right">' + producto.precio + '</td>' + 
 				// Mostrar miniatura de la imagen 
-				'<td><img src=./static/imagenes/' + producto.imagen_url + ' alt="Imagen del producto" style="width: 100px;"></td>' + 
-				'<td align="right">' + producto.proveedor + '</td>'; 
+				'<td><img src=../static/imag/' + producto.imagen + ' alt="Imagen del producto" style="width: 100px;"></td>' 
+				 + '</td>'; 
 			tablaProductos.appendChild(fila); 
 		} 
 	})
 	.catch(function (error) { 
 	// Código para manejar errores 
 	alert('Error al obtener los productos.'); 
+	console.error('Error:', error);
 	});
