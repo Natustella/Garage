@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, render_template
+from flask import request
 from flask_cors import CORS
 import mysql.connector
 from werkzeug.utils import secure_filename
@@ -79,22 +80,17 @@ class GestionProductos:
         if producto_existe:
             return False
         #Si no existe, lo agregamos
-        sql = f"INSERT INTO productos \
-            (codigo, nombre, descripcion, precio, imagen) \
-            VALUES ((%s, %s, %s, %s, %s)"
-        valores = (codigo, nombre, descripcion, precio, imagen)   
+        sql = "INSERT INTO productos (codigo, nombre, descripcion, precio, imagen) VALUES (%s, %s, %s, %s, %s)"
+        valores = (codigo, nombre, descripcion, precio, imagen)
+
         self.cursor.execute(sql, valores)
         self.conn.commit()
         return True
+
     
     #Modificar Producto
     def modificar_producto(self, codigo, nuevo_nombre, nueva_descripcion, nuevo_precio, nueva_imagen):
-        sql = f"UPDATE productos SET \
-                nombre = %s, \
-                descripcion = %s, \
-                precio = %s, \
-                imagen = %s \
-            WHERE codigo = %s"
+        sql = "UPDATE productos SET nombre = %s, descripcion = %s, precio = %s, imagen = %s WHERE codigo = %s"
         valores = (nuevo_nombre, nueva_descripcion, nuevo_precio, nueva_imagen, codigo)
         self.cursor.execute(sql, valores)
         self.conn.commit()
@@ -108,19 +104,21 @@ class GestionProductos:
 
 #Cuerpo del Programa  
 #Crear una instancia de la clase GestionProductos
-gestion = GestionProductos(host='localhost', user='root', password='', database='miapp')
+gestion = GestionProductos(host='localhost', user='root', password='Bemitos2102!', database='miapp')
 #Carpeta para guardar las imagenes, la ruta donde colocarás las imágenes puede se modificada de acuerdo a tu preferencia.
-ruta_destino = './static/imagenes/'
+ruta_destino = './static/imag/'
 
+if not os.path.exists(ruta_destino):
+    os.makedirs(ruta_destino)
+
+#RUTAS
 #Ruta para listar productos
 @app.route("/productos", methods=["GET"])
 def listar_productos():
     productos = gestion.listar_productos()
     return jsonify(productos)
 
-if __name__ == "__main__":
-    app.run(debug=True)
-
+#Ruta para consultar productos
 @app.route("/productos/<int:codigo>", methods=["GET"])
 def mostrar_producto(codigo):
     producto = gestion.consultar_producto(codigo)
@@ -129,25 +127,34 @@ def mostrar_producto(codigo):
     else:
         return "Producto no encontrado", 404
 
-@app.route("/productos", methods=["POST"]) 
-def agregar_producto(): 
-    # Recojo los datos del form 
-    codigo = request.form['codigo'] 
-    nombre = request.form['nombre'] 
-    descripcion = request.form['descripcion'] 
-    precio = request.form['precio'] 
-    imagen = request.files['imagen'] 
-    nombre_imagen = secure_filename(imagen.filename) 
+#Ruta para agregar productos
+@app.route("/productos", methods=["POST"])
+def agregar_producto():
+    # Recojo los datos del form
+    codigo = request.form['codigo']
+    nombre = request.form['nombre']
+    descripcion = request.form['descripcion']
+    precio = request.form['precio']
+    imagen = request.files['imagen']
     
-    nombre_base, extension = os.path.splitext(nombre_imagen) 
-    nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}" 
-    imagen.save(os.path.join(ruta_destino, nombre_imagen)) 
+    nombre_imagen = None  # Definir una variable nombre_imagen con un valor predeterminado
     
-    if gestion.agregar_producto(codigo, nombre, descripcion, precio, nombre_imagen): 
-        return jsonify({"mensaje": "Producto agregado"}), 201 
-    else: 
+    # Verifica si la imagen se ha seleccionado en el formulario
+    if imagen and imagen.filename:
+        nombre_imagen = secure_filename(imagen.filename)
+        nombre_base, extension = os.path.splitext(nombre_imagen)
+        nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"
+        imagen.save(os.path.join(ruta_destino, nombre_imagen))
+    else:
+        return jsonify({"mensaje": "No se ha proporcionado una imagen"}), 400
+
+    if gestion.agregar_producto(codigo, nombre, descripcion, precio, nombre_imagen):
+        return jsonify({"mensaje": "Producto agregado"}), 201
+    else:
         return jsonify({"mensaje": "Producto ya existe"}), 400
-    
+
+
+#Ruta para modificar productos   
 @app.route("/productos/<int:codigo>", methods=["PUT"]) 
 def modificar_producto(codigo):
     # Recojo los datos del form 
@@ -167,14 +174,15 @@ def modificar_producto(codigo):
         return jsonify({"mensaje": "Producto modificado"}), 200 
     else: 
         return jsonify({"mensaje": "Producto no encontrado"}), 404
-  
+
+#Ruta para Eliminar productos
 @app.route("/productos/<int:codigo>", methods=["DELETE"]) 
 def eliminar_producto(codigo): 
-    # Primero, obtén la información del producto para encontrar la imagen 
+    # Primero obtengo la información del producto para encontrar la imagen 
     producto = gestion.consultar_producto(codigo) 
     if producto: 
         # Eliminar la imagen asociada si existe 
-        ruta_imagen = os.path.join(ruta_destino, producto['imagen_url']) 
+        ruta_imagen = os.path.join(ruta_destino, producto['imagen']) 
         if os.path.exists(ruta_imagen): 
             os.remove(ruta_imagen) 
             
@@ -186,7 +194,11 @@ def eliminar_producto(codigo):
     else: 
         return jsonify({"mensaje": "Producto no encontrado"}), 404
     
-    
+# Bloque para ejecutar la aplicación
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
 # Programa principal
 #gestion = GestionProductos('localhost', 'root', 'Bemitos2102!', 'prd1')
 
