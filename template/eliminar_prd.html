@@ -21,7 +21,9 @@
 </head>
 
 <body>
-    <h1>Eliminar Productos</h1>
+    <br><br><br><br><br>
+    <h1><strong>Eliminar Productos</strong></h1>
+    <br><br>
     <table>
         <thead>
             <tr>
@@ -29,7 +31,6 @@
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th align="right">Precio</th>
-                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -38,16 +39,16 @@
                 <td>{{ producto.nombre }}</td>
                 <td>{{ producto.descripcion }}</td>
                 <td align="right">{{ producto.precio }}</td>
-                <td>
+                <td>&nbsp &nbsp &nbsp &nbsp
                 <button @click="eliminarProducto(producto.codigo)">Eliminar</button></td>
             </tr>
         </tbody>
     </table>
-    <div class="contenedor-centrado"></div>
-    <a href="gestion_prd.html">Menu principal</a> 
+    <br><br>
+    <div class="contenedor-centrado"> <a href="gestion_prd.html">Menu principal</a> 
 </div>
     <script src="https://unpkg.com/vue@next"></script>
-    <script src="listadoEliminar.js"></script>
+    <script src="../js/listadoEliminar.js"></script>
     
 </body>
 </html>
