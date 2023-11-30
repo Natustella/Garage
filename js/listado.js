@@ -1,4 +1,5 @@
-const URL = "http://127.0.0.1:5000/" 
+//const URL = "http://127.0.0.1:5000/" 
+const URL = "https://natustella.pythonanywhere.com/" 
 // Realizamos la solicitud GET al servidor para obtener todos los productos 
 fetch(URL + 'productos') 
     .then(function (response) { 
@@ -20,7 +21,10 @@ fetch(URL + 'productos')
 			    '<td>' + producto.descripcion + '</td>' + 
 				'<td align="right">' + producto.precio + '</td>' + 
 				// Mostrar miniatura de la imagen 
-				'<td><img src=../static/imag/' + producto.imagen + ' alt="Imagen del producto" style="width: 100px;"></td>' 
+				//'<td><img src=../static/imag/' + producto.imagen + ' alt="Imagen del producto" style="width: 100px;"></td>' 
+				// + '</td>'; 
+
+				 '<td><img src=https://www.pythonanywhere.com/user/Natustella/files/home/Natustella/mysite/statis/imag/' + producto.imagen + ' alt="Imagen del producto" style="width: 100px;"></td>' 
 				 + '</td>'; 
 			tablaProductos.appendChild(fila); 
 		} 
@@ -30,3 +34,6 @@ fetch(URL + 'productos')
 	alert('Error al obtener los productos.'); 
 	console.error('Error:', error);
 	});
+
+
+	
