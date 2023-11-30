@@ -104,9 +104,11 @@ class GestionProductos:
 
 #Cuerpo del Programa  
 #Crear una instancia de la clase GestionProductos
-gestion = GestionProductos(host='localhost', user='root', password='Bemitos2102!', database='miapp')
+#gestion = GestionProductos(host='localhost', user='root', password='Bemitos2102!', database='miapp')
+gestion = GestionProductos(host='Natustella.mysql.pythonanywhere-services.com', user='Natustella', password='8enjamiN*', database='Natustella$miapp')
 #Carpeta para guardar las imagenes, la ruta donde colocarás las imágenes puede se modificada de acuerdo a tu preferencia.
-ruta_destino = './static/imag/'
+#ruta_destino = './static/imag/'
+ruta_destino = '/home/Natustella/mysite/statis/imag/'
 
 if not os.path.exists(ruta_destino):
     os.makedirs(ruta_destino)
