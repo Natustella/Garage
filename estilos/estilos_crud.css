@@ -13,9 +13,9 @@ body {
 p {
     font-family: 'Times New Roman', Times, serif;
     background-color: #f9f9f9;
-    max-width: 400px;
+    max-width: 25em;
     margin: 0 auto;
-    padding: 20px;
+    padding: 1.25em;
 }
 
 h1,
@@ -80,7 +80,8 @@ button {
     background-color: #643e91;
     color: #ffffff;
     border: none;
-    border-radius: 5px;
+    text-decoration: none;
+    border-radius: 50px;
     cursor: pointer;
 }
 
@@ -94,7 +95,7 @@ a {
     background-color: #643e91;
     color: #ffffff;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     text-decoration: none;
     font-size: 85%;
