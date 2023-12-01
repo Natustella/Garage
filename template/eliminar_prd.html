@@ -21,8 +21,12 @@
 </head>
 
 <body>
-    <br><br><br><br><br>
-    <h1><strong>Eliminar Productos</strong></h1>
+    <div class="top-bar"></div>
+    <nav class="navbar">
+        <img src="../images/logo.svg" alt="Garage Sale" title="Garage Sale" class="logo">
+        <h1 class="contenedor-centrado"><strong>Eliminar Productos</strong></h1>
+    </nav>
+
     <br><br>
     <table>
         <thead>
@@ -39,6 +43,10 @@
                 <td>{{ producto.nombre }}</td>
                 <td>{{ producto.descripcion }}</td>
                 <td align="right">{{ producto.precio }}</td>
+                <td>
+                    <img :src="'https://www.pythonanywhere.com/user/Natustella/files/home/Natustella/mysite/static/imag/' + producto.imagen" alt="Imagen del producto" style="max-width: 200px;">
+                </td>
+                
                 <td>&nbsp &nbsp &nbsp &nbsp
                 <button @click="eliminarProducto(producto.codigo)">Eliminar</button></td>
             </tr>
