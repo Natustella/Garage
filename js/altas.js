@@ -20,7 +20,7 @@ document.getElementById('formulario').addEventListener('submit', function (event
 			    return response.json(); 
 			}  
 		}) 
-		.thenthen(function (data) { 
+		.then(function (data) { 
 		    alert('Producto agregado correctamente.');
 			// Limpiar el formulario para el proximo producto 
 			document.getElementById('codigo').value = "";

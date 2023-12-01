@@ -19,8 +19,13 @@
 </head>
 
 <body>
-    <br><br><br><br><br>
-    <h1><strong>Consultar Productos</strong></h1><br>
+    <div class="top-bar"></div>
+    <nav class="navbar">
+        <img src="../images/logo.svg" alt="Garage Sale" title="Garage Sale" class="logo">
+        <h1 class="contenedor-centrado"><strong>Consultar Productos</strong></h1>
+    </nav>
+
+    <br><br>
     <div id="app">
         <form @submit.prevent="consultarProducto"> 
             <label for="codigo">Código:</label> 
@@ -48,4 +53,5 @@
     <script src="../js/consultas.js"></script>
 
 </body>
+
 </html>

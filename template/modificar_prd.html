@@ -21,8 +21,13 @@
 </head>
 
 <body>
-    <br><br><br><br><br>
-    <h1><strong>Modificar Productos</strong></h1>
+    <div class="top-bar"></div>
+    <nav class="navbar">
+        <img src="../images/logo.svg" alt="Garage Sale" title="Garage Sale" class="logo">
+        <h1 class="contenedor-centrado"><strong>Modificar Productos</strong></h1>
+    </nav>
+
+    <br>
     <div id="app">
         <form @submit.prevent="obtenerProducto"> 
             <label for="codigo">Código:</label> 
@@ -53,7 +58,7 @@
                 <input type="file" id="nuevaImagen" @change="seleccionarImagen"><br> 
                 <br><br>
                 <button type="submit">Guardar Cambios</button> 
-                 <a href="modificaciones.html">Cancelar</a>
+                 <a href="modificar_prd.html">Cancelar</a>
             </form>
         </div>
     </div>
