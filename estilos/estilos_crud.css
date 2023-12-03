@@ -39,12 +39,17 @@ form {
 
 table {
     max-width: 90%;
-    margin: 0 auto;
+    margin: 2em auto; 
     padding: 1.25em;
     background-color: white;
     border: 1px solid lightslategray;
     border-radius: 5px;
 }
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
 
 label {
     display: block;
@@ -136,4 +141,9 @@ button:hover {
     width: 100%;
 }
 
+/*Elimino el punto en la imagen*/
+.contenedor-centrado ul li:last-child {
+    display: block; 
+    margin-top: 10px; 
+}
 
