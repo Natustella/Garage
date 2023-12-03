@@ -952,3 +952,26 @@ div.item:nth-of-type(5):hover~main#carousel {
         transform: scale(1.05);
     }
 }
+
+/*GESTION PROFDUCTOS*/
+.gestion{
+    padding: 8px;
+    margin: 4px;
+    background-color: #643e91;
+    border: none;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.gestion:hover {
+    background-color: #c099ef;
+}
+
+.gestion:hover a {
+    color: black;
+
+}
+
+.gestion a{
+    color: #ffffff;
+}
