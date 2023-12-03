@@ -4,8 +4,17 @@ const URL = "https://natustella.pythonanywhere.com/"
 document.getElementById('formulario').addEventListener('submit', function (event) {
 	event.preventDefault(); // Evitamos que se envie el form 
 
+	// Validamos que el campo "Código" solo contenga números
+	var codigoInput = document.getElementById('codigo');
+	var codigoValue = codigoInput.value;
+	
+	if (!/^\d+$/.test(codigoValue)) {
+		alert('Por favor, ingrese solo números en el campo "Código".');
+		return;
+	}
+
 	var formData = new FormData();
-	formData.append('codigo', document.getElementById('codigo').value);
+	formData.append('codigo', codigoValue);
 	formData.append('nombre', document.getElementById('nombre').value);
 	formData.append('descripcion', document.getElementById('descripcion').value);
 	formData.append('precio', document.getElementById('precio').value);;
